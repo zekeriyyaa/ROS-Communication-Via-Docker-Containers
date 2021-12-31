@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  master:
+    image: ct2034/vnc-ros-kinetic-full
+    ports:
+      - "6080:80"
+      - '11311:11311'
+    container_name: master
+    hostname: master
+    environment:
+      - "ROS_HOSTNAME=master"
+      - "ROS_MASTER_URI=http://localhost:11311"
+    command: roscore
+
+  talker:
+    image: ct2034/vnc-ros-kinetic-full
+    ports:
+      - '6081:80'
+    container_name: talker
+    hostname: talker
+    environment:
+      - ROS_HOSTNAME=talker
+      - ROS_MASTER_URI=http://master:11311
+          
+  listener:
+    image: ct2034/vnc-ros-kinetic-full
+    ports:
+      - '6082:80'
+    container_name: listener
+    hostname: listener
+    environment:
+      - ROS_HOSTNAME=listener
+      - ROS_MASTER_URI=http://master:11311
+    
+
