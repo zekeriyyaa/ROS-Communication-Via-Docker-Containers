@@ -20,7 +20,7 @@ In order to communicate ROS nodes, a master must be identified and advertised to
 The docker-compose file includes given configurations: 
 ```
 version: '2'
-
+ 
 services:
   master:
     image: ct2034/vnc-ros-kinetic-full
