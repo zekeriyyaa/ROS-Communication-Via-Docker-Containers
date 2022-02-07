@@ -1,7 +1,7 @@
 # ROS-Communication-Via-Docker-Containers
 
 The purpose of this project is establish a ROS(robot operating system) communication architecture via independent docker containers. Basically, ROS communication consists of three components namely master, publisher and subscriber nodes. All communication goes through the master. 
-
+ 
 <p align="center" width="100%">
     <img width="50%" src="https://github.com/zekeriyyaa/ROS-Communication-Via-Docker-Containers/blob/master/rosArchitecture.png"> 
 </p>
